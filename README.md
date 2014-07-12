@@ -1,7 +1,7 @@
 ArabiPlusTabs
 =============
 
-Simple Tab Plugin that i use in my projects , Update when i need a new features , for now i just have the following option
+Simple Tab Plugin that i use in my projects , Update when i need a new features , for now i just have the following options
      		
      		warrper: ".tabs", // The container of the Tabs
 	        parrentEleme : "li", // see in code 
@@ -41,7 +41,7 @@ Simple Tab Plugin that i use in my projects , Update when i need a new features 
 	 $('.tabs').ArabiPlusTabs();
 	 
 
-## Run the plugin  ##
+## Plugin Options  ##
 
 	$('.tabs').ArabiPlusTabs({
 	        warrper: ".tabs",

@@ -1,21 +1,14 @@
-$.fn.ArabiPlusTabs = function(options) {
+
+	$.fn.ArabiPlusTabs = function(options) {
 		
 		// This is the easiest way to have default options.
 	    var ArabiPlusOption = $.extend({
 	        //  Set default values
-	        warrper: ".tabs",
-	        parrentEleme : "li",
-	        tabs: "div",
 	        effet: 'slide',
-	        selectedd: 'selected',
-	        parentClass:'select',
-	        duration: 1
 	    }, options );
 
 
-
-
-        function HideElement(eleme,duration) {
+	     function HideElement(eleme,duration) {
     		if (ArabiPlusOption.effet == 'fade') {
     			eleme.fadeOut(duration);
     		}else{
@@ -31,32 +24,63 @@ $.fn.ArabiPlusTabs = function(options) {
     		};
     	}
 
-    /*Hide all Div then show selected One*/	
-	HideElement( this.find( ArabiPlusOption.tabs ) , ArabiPlusOption.duration  );
-	ShowElement( this.find( ArabiPlusOption.tabs + '.' + ArabiPlusOption.selectedd) , ArabiPlusOption.duration );
 
-	    
-	     localStorage.currentLiChose = $('li').hasClass('select');
+	
+	var refresh = window.location.hash;
 
+	this.each(function() {
+		
+		var current = null ; 
+	
+		var id = $(this).attr('id');
 
-	/*When The Li is clicked chek for the current one the show Div if is dose not match to the current one*/	
-	$( ArabiPlusOption.parrentEleme ).click(function(event) {
+		var storage = localStorage.getItem('tab'+id) ; 
+		
 
-		if ( !$(this).hasClass(ArabiPlusOption.parentClass)) {
+		if ( refresh != '' && $(this).find('a[href="' + refresh + '"]').length > 0 ) {
 
-			var $rel = $(this).attr('rel');
+			current = refresh;
 
-			/*remove selected Class the add't to this elem*/
-			$(ArabiPlusOption.parrentEleme).removeClass(ArabiPlusOption.parentClass);
-			$(this).addClass(ArabiPlusOption.parentClass);
+		}
 
-			HideElement( $(	ArabiPlusOption.warrper + '>' + ArabiPlusOption.tabs) , ArabiPlusOption.duration);
-			ShowElement ($(  ArabiPlusOption.tabs + '.' + $rel ) , ArabiPlusOption.duration );
+		else if( storage && $(this).find('a[href="' + storage + '"]').length > 0 ){
 
-			$(  ArabiPlusOption.warrper + '>' + ArabiPlusOption.tabs).removeClass(ArabiPlusOption.selectedd);
-			$(  ArabiPlusOption.tabs + '.' + $rel ).addClass(ArabiPlusOption.selectedd);
+			current = storage;
+		}
+
+		else{
 			
-		};
+			current = $(this).find('a:first').attr('href');
+		
+		}
+
+		$(this).find('a[href="' + current + '"]').parent('li').addClass('select');
+
+		$(current).siblings().hide();
+
+
+		$(this).find('a').click(function() {
+			
+			var link = $(this).attr('href');
+
+			if( link == current){
+				return false
+			}
+
+			else{
+
+				$(this).parent('li').siblings().removeClass('select');
+				$(this).parent('li').addClass('select');
+
+				ShowElement( $(link) , 500);
+				HideElement( $(link).siblings() , 500);
+
+				current = link ;
+
+				localStorage.setItem('tab'+id,current);
+			}
+
+		});
 
 	});
-};
+}

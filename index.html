@@ -1,76 +1,80 @@
 <html>
 	<head>
-		<title>Tabs TUTO ArabiPlus.com</title>
+		<title>ArabiPlus Tabs Plugin</title>
 
-		<link rel="stylesheet" href="style.css">
-
-		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
-
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 
+
 	<body>
-
-		<div class="warpper">
-				
-			<div class="tabs">
-				
-				<ul>
-					<li rel="tab-1" class="select">ArabiPlus</li>
-					<li rel="tab-2">Wordpress</li>
-					<li rel="tab-3">jQuery</li>
-				</ul>	
-
-
-				<div class="tab-1 selected">
-					
-					<img src="1.png" alt="">
-					<h2>jQuery Tabs</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consectetur, voluptate corrupti esse cumque impedit recusandae tempora neque, sequi, rerum qui, optio dolorem id in tempore dignissimos ullam at saepe.</p>
-
-				</div>
-
-				<div class="tab-2">
-					<img src="2.png" alt="">
-					<h2>PHP Dev</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consectetur, voluptate corrupti esse cumque impedit recusandae tempora neque, sequi, rerum qui, optio dolorem id in tempore dignissimos ullam at saepe.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio consequatur dicta ipsam beatae ab perferendis unde error, eos temporibus, doloremque quas in nostrum. Quidem rem eos atque officia ab, reiciendis.
-
-					</p>
-
-				</div>
-
-				<div class="tab-3">
-
-					<img src="1.png" alt="">
-					<h2>Wordpress WebSite</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consectetur, voluptate corrupti esse cumque impedit recusandae tempora neque, sequi, rerum qui, optio dolorem id in tempore dignissimos ullam at saepe.</p>
-					
-
-
-				</div>
-
-			</div>
-
-		</div>
-				
 	
-		<script src="jquery.js"></script>
+	<div class="warpper">
 		
-		<script src="ArabiPlus_tabs.js"></script>
+		<div class="tabs">
+			<ul id="tab-1" class="tab">
+				<li><a href="#c1">TAB 1</a></li>
+				<li><a href="#c2">TAB 2</a></li>
+				<li><a href="#c3">TAB 3</a></li>
+			</ul>
 
+
+			<div>
+				<div id="c1">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nihil ratione quibusdam, accusamus dolore optio sint, esse quisquam magni eaque nesciunt atque quasi rerum, ex unde eum numquam adipisci architecto.
+					
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat eligendi ipsam consequuntur accusantium velit ad praesentium, quae minus nulla similique dolor illum non odit, veniam obcaecati, tenetur necessitatibus dolorum quasi.
+				</div>
+				
+				<div id="c2">
+					consectetur adipisicing elit. Quaerat eligendi ipsam consequuntur accusantium velit ad praesentium, quae minus nulla similique dolor illum non odit, veniam obcaecati, tenetur necessitatibus dolorum quasi.
+				</div>
+			
+				<div id="c3">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat eligendi ipsam consequuntur accusantium velit ad praesentium, quae minus nulla similique dolor illum non odit, veniam obcaecati, tenetur necessitatibus dolorum quasi.
+				</div>	
+			</div>	
+		</div>
+
+
+
+		<div class="tabs">
+			<ul id="tab-2" class="tab">
+				<li><a href="#a1">TAB 1</a></li>
+				<li><a href="#a2">TAB 2</a></li>
+				<li><a href="#a3">TAB 3</a></li>
+			</ul>
+
+
+			<div>
+				<div id="a1">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea nihil ratione quibusdam, accusamus dolore optio sint, esse quisquam magni eaque nesciunt atque quasi rerum, ex unde eum numquam adipisci architecto.
+					
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat eligendi ipsam consequuntur accusantium velit ad praesentium, quae minus nulla similique dolor illum non odit, veniam obcaecati, tenetur necessitatibus dolorum quasi.
+				</div>
+				
+				<div id="a2">
+					consectetur adipisicing elit. Quaerat eligendi ipsam consequuntur accusantium velit ad praesentium, quae minus nulla similique dolor illum non odit, veniam obcaecati, tenetur necessitatibus dolorum quasi.
+				</div>
+			
+				<div id="a3">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat eligendi ipsam consequuntur accusantium velit ad praesentium, quae minus nulla similique dolor illum non odit, veniam obcaecati, tenetur necessitatibus dolorum quasi.
+				</div>	
+			</div>	
+		</div>
+
+
+
+
+	</div>
+
+		<script src="jquery.js"></script>
+		<script src="code.js"></script>
 		<script>
+			 $('.tab').ArabiPlusTabs({
+			 	effet : 'slide'
+			 });
 
-
-			jQuery(document).ready(function($) {
-
-				$('.tabs').ArabiPlusTabs({
-					warrper : '.tabs',
-					duration:500,
-					effet:'slide'
-				});
-			});
-
-		</script>
+		 </script>
 
 	</body>
 </html>

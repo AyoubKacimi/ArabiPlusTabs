@@ -8,7 +8,7 @@ Simple Tab Plugin that i use in my projects , Update when i need a new features 
 ## How To use  ##
 
 	
-	<div class="tabs">
+	
 		
 		<ul id="tab-2" class="tab">
 			<li><a href="#a1">TAB 1</a></li>
@@ -18,17 +18,13 @@ Simple Tab Plugin that i use in my projects , Update when i need a new features 
 	
 		
 		<div>
-			<div id="a1">
-			</div>
+			<li id="a1"> </li>
 			
-			<div id="a2">	
-			</div>
+			<li id="a2"> </li>
 			
-			<div id="a3">
-			</div>	
+			<li id="a3"> </li>	
 		</div>
-		
-	</div>
+
 	
 
 ######Its up to you to use your own rel="attribute" Just be sure to use the same rel attribute on the class name  you can have your own select li and selected div class just define it in the plugin option

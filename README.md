@@ -3,35 +3,32 @@ ArabiPlusTabs
 
 Simple Tab Plugin that i use in my projects , Update when i need a new features , for now i just have the following options
      		
-     		warrper: ".tabs", // The container of the Tabs
-	        parrentEleme : "li", // see in code 
-	        tabs: "div", // 
-	        effet: 'slide', // tow option slide and fade
-	        selectedd: 'selected', // selected class for the tab content for css purpose only 
-	        parentClass:'select', // li tab also for a css purpose to style the elements with your own class's 
-	        duration: 1 // animation duration default 1 use 500 or more if you chose the slide effect , 1 for the fade
+     	
 
 ## How To use  ##
 
+	
 	<div class="tabs">
-  		<ul>
-  			<li rel="tab-1" class="select">tab One</li>
-  			<li rel="tab-2">tab Two</li>
-  			<li rel="tab-3">tab Three</li>
-  		</ul>	
-  
-  		<div class="tab-1 selected">
-  			
-  		</div>
-  
-  		<div class="tab-2">
-  
-  		</div>
-  
-  		<div class="tab-2">
-  
-  		</div>
-	</div
+		
+		<ul id="tab-2" class="tab">
+			<li><a href="#a1">TAB 1</a></li>
+			<li><a href="#a2">TAB 2</a></li>
+			<li><a href="#a3">TAB 3</a></li>
+		</ul>
+	
+		
+		<div>
+			<div id="a1">
+			</div>
+			
+			<div id="a2">	
+			</div>
+			
+			<div id="a3">
+			</div>	
+		</div>
+		
+	</div>
 	
 
 ######Its up to you to use your own rel="attribute" Just be sure to use the same rel attribute on the class name  you can have your own select li and selected div class just define it in the plugin option
@@ -44,12 +41,7 @@ Simple Tab Plugin that i use in my projects , Update when i need a new features 
 ## Plugin Options  ##
 
 	$('.tabs').ArabiPlusTabs({
-	        warrper: ".tabs",
-	        parrentEleme : "li",
-	        tabs: "div",
 	        effet: 'slide',
-	        selectedd: 'selected',
-	        parentClass:'select',
-	        duration: 1
+	        currenTap : 'SetClass' // work on it select the current tab
 	});
 
